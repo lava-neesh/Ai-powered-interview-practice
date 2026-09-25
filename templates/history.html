@@ -1,0 +1,263 @@
+{% extends "base.html" %}
+{% block body %}
+
+<!-- History Hero -->
+<section class="history-hero">
+    <div class="container">
+        <div class="history-header">
+            <div class="history-icon">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+            </div>
+            <h1 class="history-title">Interview History</h1>
+            <p class="history-subtitle">Track your progress and review past interview performances</p>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Overview -->
+<section class="history-section">
+    <div class="container">
+        <div class="stats-overview">
+            <div class="stat-box">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <div class="stat-value">{{ total_interviews }}</div>
+                    <div class="stat-label">Total Interviews</div>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-content">
+                    <div class="stat-value">{{ avg_score }}%</div>
+                    <div class="stat-label">Average Score</div>
+                </div>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-content">
+                    <div class="stat-value">{{ domains_covered }}</div>
+                    <div class="stat-label">Domains Covered</div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- History Table -->
+<section class="history-section">
+    <div class="container">
+        <div class="history-table-card">
+            <div class="table-header">
+                <h3>Interview Records</h3>
+
+            </div>
+
+            <div class="table-responsive">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Domain</th>
+                            <th>Questions</th>
+
+                            <th>Score</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                            <th>Actions</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+    {% if history %}
+        {% for h in history %}
+        <tr>
+            <td data-label="Date">
+                <div class="date-cell">
+                    <div class="date-day">{{ h.date.strftime('%b %d, %Y') }}</div>
+                    <div class="date-time">{{ h.date.strftime('%I:%M %p') }}</div>
+                </div>
+            </td>
+
+            <td data-label="Domain">
+                <div class="domain-cell">
+                    <span class="domain-icon">💻</span>
+                    <span>{{ h.domain }}</span>
+                </div>
+            </td>
+
+            <td data-label="Questions">{{ h.questions|length }}</td>
+
+            <td data-label="Score">
+                <div class="score-cell">
+                    <span class="score-number">{{ h.score }}</span>
+                    <span class="score-total">/{{ h.questions|length * 10 }}</span>
+                </div>
+            </td>
+
+            <td data-label="Status">
+                <span class="status-badge">{{ h.status }}</span>
+            </td>
+
+            <td>
+                <button class="demo-button" onclick='showDetails({{ h | tojson | safe }})'>
+                    View Details
+                </button>
+            </td>
+
+            <td>
+                <button class="delete-button" onclick="deleteHistory({{ h.id }}, this)">
+                    Delete
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <tr>
+            <td colspan="7" style="text-align:center; padding: 20px; color: #ffff;">
+                🚫 No interview history available
+            </td>
+        </tr>
+    {% endif %}
+</tbody>
+
+
+                </table>
+            </div>
+
+            <!-- Pagination -->
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="history-section">
+    <div class="container">
+        <div class="history-cta">
+            <h3>Ready for Your Next Interview?</h3>
+            <p>Continue improving your skills with more practice sessions</p>
+            <a href="/#domains-section" class="btn-cta">Start New Interview</a>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Bubbles Background -->
+<script>
+function showDetails(data) {
+
+    let strengths = data.strengths.map(s =>
+        `<tr><td>${s}</td></tr>`
+    ).join("");
+
+    let improvements = data.improvements.map(i =>
+        `<tr><td>${i}</td></tr>`
+    ).join("");
+
+    let questions = data.questions.map((q, idx) =>
+        `<tr>
+            <td>${idx + 1}</td>
+            <td>${q.question}</td>
+            <td>${q.feedback}</td>
+            <td>${q.score}/10</td>
+        </tr>`
+    ).join("");
+
+    Swal.fire({
+        title: "Interview Details",
+        width: "80%",
+        html: `
+            <h3>Strengths</h3>
+            <table class="history-table">
+                <tbody>${strengths}</tbody>
+            </table>
+
+            <h3 style="margin-top:15px;">Areas for Improvement</h3>
+            <table class="history-table">
+                <tbody>${improvements}</tbody>
+            </table>
+
+            <h3 style="margin-top:15px;">Question-wise Feedback</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Question</th>
+                        <th>Feedback</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>${questions}</tbody>
+            </table>
+
+            <h3 style="margin-top:15px;">Final Feedback</h3>
+            <p>${data.final_feedback}</p>
+        `,
+        confirmButtonText: "Close",
+        showCloseButton: true
+    });
+}
+function deleteHistory(id, btn) {
+    Swal.fire({
+        title: "Are you sure?",
+        text: "This interview record will be permanently deleted!",
+        icon: "warning",
+        position: "center",
+        showCancelButton: true,
+        confirmButtonColor: "#e74c3c",
+        cancelButtonColor: "#6c757d",
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "Cancel"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`/delete-history/${id}`, {
+                method: "DELETE"
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Deleted!",
+                        text: "Interview record removed successfully.",
+                        position: "center",
+                        toast: false,
+                        showConfirmButton: true,
+                        confirmButtonText: "OK"
+                    });
+
+                    // 🔥 Remove row from table
+                    btn.closest("tr").remove();
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error",
+                        text: "Unable to delete the interview record.",
+                        position: "center"
+                    });
+                }
+            })
+            .catch(() => {
+                Swal.fire({
+                    icon: "error",
+                    title: "Server Error",
+                    text: "Something went wrong. Please try again.",
+                    position: "center"
+                });
+            });
+        }
+    });
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% endblock body %}

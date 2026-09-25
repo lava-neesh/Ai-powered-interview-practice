@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Bot</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/result.css">
+    <link rel="stylesheet" href="static/history.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="nav-brand">
+                    <div class="brand-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h1>Interview Bot</h1>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/about" class="nav-link">About</a>
+                    <a href="/history" class="nav-link">History</a>
+                    <a href="/logout" class="btn-login">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+{% block body %}
+
+{% endblock body %}
+
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2 class="hero-title">Welcome to Interview Bot Platform</h2>
+            <p class="hero-subtitle">Practice your technical interviews with our AI-powered interview bot</p>
+            <p class="hero-description">Master your interview skills with voice-based AI conversations, real-time
+                feedback, and comprehensive performance analysis across multiple technical domains.</p>
+            <div class="hero-buttons">
+                <a href="/about" class="btn-primary">Learn More</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Domains</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Questions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Available</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Domains Section -->
+<section class="domains-section" id="domains-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Explore Our Interview Domains</h2>
+            <p class="section-subtitle">Comprehensive coverage of technical interview topics across multiple disciplines
+            </p>
+        </div>
+        <div class="domains-grid">
+            <div class="domain-card" onclick="selectDomain('frontend')">
+                <div class="domain-icon">💻</div>
+                <h3>Frontend Development</h3>
+                <p>HTML, CSS, JavaScript, React, Vue, Angular</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('backend')">
+                <div class="domain-icon">⚙️</div>
+                <h3>Backend Development</h3>
+                <p>Node.js, Express, REST APIs, Databases</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('python')">
+                <div class="domain-icon">🐍</div>
+                <h3>Python Programming</h3>
+                <p>Core Python, OOP, Data Structures</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('data science')">
+                <div class="domain-icon">📊</div>
+                <h3>Data Science</h3>
+                <p>ML, Statistics, Pandas, NumPy</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('cloud computing')">
+                <div class="domain-icon">☁️</div>
+                <h3>Cloud Computing</h3>
+                <p>AWS, Azure, GCP, DevOps</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('sql')">
+                <div class="domain-icon">🗄️</div>
+                <h3>Database Management</h3>
+                <p>SQL, NoSQL, MongoDB, PostgreSQL</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('cybersecurity')">
+                <div class="domain-icon">🔐</div>
+                <h3>Cybersecurity</h3>
+                <p>Security Principles, Encryption, Threats</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('mobile development')">
+                <div class="domain-icon">📱</div>
+                <h3>Mobile Development</h3>
+                <p>iOS, Android, React Native, Flutter</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('machine learning')">
+                <div class="domain-icon">🤖</div>
+                <h3>Machine Learning</h3>
+                <p>AI, Neural Networks, Deep Learning</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+
+            <div class="domain-card" onclick="selectDomain('uiux')">
+                <div class="domain-icon">🎨</div>
+                <h3>UI/UX Design</h3>
+                <p>Design Principles, Figma, User Research</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+            <div class="domain-card" onclick="selectDomain('data-analytics')">
+                <div class="domain-icon">📈</div>
+                <h3>Data Analytics</h3>
+                <p>Data Analysis, Excel, SQL, Power BI, Visualization</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+            <div class="domain-card" onclick="selectDomain('hr')">
+                <div class="domain-icon">🧑‍💼</div>
+                <h3>Human Resources</h3>
+                <p>Recruitment, Employee Relations, HR Policies</p>
+                <span class="domain-badge">Get Started</span>
+            </div>
+            <div class="domain-card" onclick="selectDomain('mern')">
+    <div class="domain-icon">🌐</div>
+    <h3>MERN Stack</h3>
+    <p>MongoDB, Express.js, React, Node.js</p>
+    <span class="domain-badge">Get Started</span>
+</div>
+
+    <div class="domain-card" onclick="selectDomain('php')">
+    <div class="domain-icon">🐘</div>
+    <h3>PHP Development</h3>
+    <p>PHP, HTML, CSS</p>
+    <span class="domain-badge">Get Started</span>
+</div>
+
+ <div class="domain-card" onclick="selectDomain('java')">
+    <div class="domain-icon">🐘</div>
+    <h3>java Development</h3>
+    <p>JSP, SPRING, ORACLE</p>
+    <span class="domain-badge">Get Started</span>
+</div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Why Choose Interview Bot?</h2>
+            <p class="section-subtitle">Experience the future of interview preparation with cutting-edge AI technology
+            </p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h3>Voice-Based Interview</h3>
+                <p>Practice interviews with voice-to-text capability. Speak naturally and get instant feedback on your
+                    communication skills.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h3>AI-Powered Analysis</h3>
+                <p>Get intelligent feedback and scoring based on your answers from our advanced NLP-powered AI system.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                </div>
+                <h3>Multiple Domains</h3>
+                <p>Choose from 10+ technical domains including Frontend, Backend, Python, Data Science, and more.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                </div>
+                <h3>Detailed Reports</h3>
+                <p>Receive comprehensive performance reports with strengths, weaknesses, and improvement suggestions.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <h3>24/7 Availability</h3>
+                <p>Practice anytime, anywhere. Our AI bot is always ready to conduct interviews at your convenience.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3>Personalized Learning</h3>
+                <p>Adaptive question difficulty based on your performance and customized learning paths for improvement.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- How It Works Section -->
+<section class="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">How Interview Bot Works</h2>
+            <p class="section-subtitle">Simple 4-step process to ace your technical interviews</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                </div>
+                <h3>Register Account</h3>
+                <p>Create your free account in seconds and choose your preferred interview domain</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h3>Select Domain</h3>
+                <p>Pick from 10+ technical domains matching your career goals and expertise level</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h3>Start Interview</h3>
+                <p>Engage with our AI bot through voice or text and answer curated interview questions</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <h3>Get Feedback</h3>
+                <p>Receive instant AI-powered analysis, scoring, and personalized improvement recommendations</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits-section">
+    <div class="container">
+        <div class="benefits-content">
+            <div class="benefits-left">
+                <h2>Why Thousands Choose Interview Bot</h2>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Realistic Interview Simulation</h4>
+                        <p>Experience authentic interview scenarios that mirror real-world technical interviews</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Instant Performance Metrics</h4>
+                        <p>Get immediate scoring and detailed analytics on your interview performance</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Confidence Building</h4>
+                        <p>Practice in a stress-free environment and build confidence before the real interview</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <div>
+                        <h4>Continuous Improvement</h4>
+                        <p>Track your progress over time and identify areas that need more attention</p>
+                    </div>
+                </div>
+            </div>
+            <div class="benefits-right">
+                <div class="benefits-visual">
+                    <div class="visual-card">
+                        <div class="visual-icon">🎯</div>
+                        <h4>Success Rate</h4>
+                        <div class="visual-stat">95%</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="visual-icon">⭐</div>
+                        <h4>User Rating</h4>
+                        <div class="visual-stat">4.9/5</div>
+                    </div>
+                    <div class="visual-card">
+                        <div class="visual-icon">👥</div>
+                        <h4>Active Users</h4>
+                        <div class="visual-stat">10K+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">What Our Users Say</h2>
+            <p class="section-subtitle">Real success stories from interview candidates like you</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Interview Bot helped me land my dream job at a FAANG company. The AI
+                    feedback was incredibly accurate and helped me improve my communication skills."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👨‍💻</div>
+                    <div>
+                        <div class="author-name">Rajesh Kumar</div>
+                        <div class="author-role">Software Engineer at Google</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"The voice-based interview feature is game-changing. It feels like talking
+                    to a real interviewer and prepared me perfectly for my actual interviews."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👩‍💼</div>
+                    <div>
+                        <div class="author-name">Priya Sharma</div>
+                        <div class="author-role">Data Scientist at Microsoft</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"I practiced with Interview Bot for 2 weeks and saw a massive improvement in
+                    my confidence. The detailed feedback helped me identify and fix my weak points."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👨‍🎓</div>
+                    <div>
+                        <div class="author-name">Amit Patel</div>
+                        <div class="author-role">Frontend Developer at Amazon</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h3>Ready to Practice?</h3>
+            <p>Join thousands of successful candidates who prepared with Interview Bot</p>
+            <a href="#domains-section" class="btn-cta">Start Your Free Interview Today</a>
+            <p class="cta-note">No credit card required • 24/7 access • Instant feedback</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    function selectDomain(domain) {
+        window.location.href = `/select-domain/${domain}`;
+    }
+</script>
+
+
+{% endblock body %}
+
+<!-- Floating Bubbles Background -->

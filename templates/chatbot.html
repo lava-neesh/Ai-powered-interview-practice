@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+{% block body %}
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+        <div class="chatbot-card">
+            <!-- Chatbot Header -->
+            <div class="chatbot-header">
+                <h2>🤖 Smart AI Interview Bot</h2>
+                <button onclick="resetInterview()" class="btn-reset">Reset Chat</button>
+            </div>
+
+            <!-- Start Interview Section -->
+           
+            <!-- Chat Section (Hidden initially) -->
+               <h3>Welcome! Your {{ domain }} interview is starting 🚀</h3><br>
+
+                <!-- Quick Suggestions -->
+               
+                <!-- Chat Messages -->
+                <div id="chatMessages" class="chat-messages">
+                
+                    <!-- Messages will be dynamically added here -->
+                </div>
+
+                <!-- Chat Input Area -->
+                <div class="chat-input-area">
+                    <button id="voiceBtn" onclick="toggleVoiceInput()" class="btn-voice">
+                        🎤 Voice
+                    </button>
+                    <input 
+                        type="text" 
+                        id="answerInput" 
+                        class="chat-input" 
+                        placeholder="Type your answer here or use voice input..."
+                        onkeypress="if(event.key === 'Enter') submitAnswer()"
+                    >
+                    <button id="sendBtn" onclick="submitAnswer()" class="btn-send">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+
+                <p style="text-align: center; font-size: 12px; color: #b8e6e0; margin-top: 8px;">
+                    💡 Tip: Answer thoughtfully and take your time. You can use voice or text input.
+                </p>
+            </div>
+        </div>
+
+
+    
+{% endblock body %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Bot - Login</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    <!-- Navigation -->
+ {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <script>
+      {% for category, message in messages %}
+        Swal.fire({
+          icon: "{{ 'success' if category == 'success' else 'error' }}",
+          title: "{{ 'Success' if category == 'success' else 'Oops!' }}",
+          text: "{{ message }}",
+          background: '#0f2f2a',
+          color: '#b2dfdb',
+          confirmButtonColor: '#4db6ac'
+        });
+      {% endfor %}
+    </script>
+  {% endif %}
+{% endwith %}
+
+    <!-- Register Form -->
+    <div class="form-container">
+        <div class="form-card">
+            <div class="form-header">
+                <div class="form-header-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="8.5" cy="7" r="4"></circle>
+                        <line x1="20" y1="8" x2="20" y2="14"></line>
+                        <line x1="23" y1="11" x2="17" y2="11"></line>
+                    </svg>
+                </div>
+                <h2>Login</h2>
+                <p>Create your interview preparation account</p>
+            </div>
+
+            <form action="/login" method="post">
+              
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email"  placeholder="your.email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                
+
+                <button type="submit" class="btn-submit">
+                    Login
+                </button>
+            </form>
+
+            <div class="form-footer">
+                <p>
+                    Don't have an account? 
+                    <a href="/register">register here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Bubbles Background -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
