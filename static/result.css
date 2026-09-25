@@ -1,0 +1,816 @@
+/* ===== RESULT PAGE SPECIFIC STYLES ===== */
+
+/* Result Hero Section */
+.result-hero {
+    padding: 60px 0 40px;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.result-header {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.result-icon {
+    background: rgba(112, 193, 179, 0.2);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    border: 3px solid rgba(112, 193, 179, 0.4);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.result-icon svg {
+    color: #70c1b3;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(112, 193, 179, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(112, 193, 179, 0.6);
+        transform: scale(1.05);
+    }
+}
+
+.result-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.result-subtitle {
+    font-size: 22px;
+    color: #b8e6e0;
+}
+
+/* Result Section */
+.result-section {
+    padding: 40px 0;
+    position: relative;
+    z-index: 10;
+}
+
+/* Score Card */
+.score-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(112, 193, 179, 0.3);
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.score-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 32px;
+}
+
+.score-circle svg {
+    transform: rotate(-90deg);
+}
+
+#scoreCircle {
+    transition: stroke-dashoffset 2s ease-out;
+}
+
+.score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.score-number {
+    font-size: 64px;
+    font-weight: 800;
+    color: #70c1b3;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.score-label {
+    font-size: 14px;
+    color: #b8e6e0;
+    font-weight: 600;
+}
+
+.score-status {
+    margin-bottom: 24px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.status-badge.excellent {
+    background: linear-gradient(135deg, #70c1b3, #5ab0a2);
+    color: #0a2463;
+    box-shadow: 0 4px 16px rgba(112, 193, 179, 0.4);
+}
+
+.status-badge.good {
+    background: linear-gradient(135deg, #3d9970, #2d7a57);
+    color: white;
+}
+
+.status-badge.fair {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+}
+
+.score-message {
+    font-size: 18px;
+    color: #b8e6e0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Performance Grid */
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.performance-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(112, 193, 179, 0.3);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s ease;
+}
+
+.performance-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.performance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.performance-header h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.performance-score {
+    font-size: 28px;
+    font-weight: 800;
+    color: #70c1b3;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #70c1b3, #5ab0a2);
+    border-radius: 10px;
+    transition: width 1.5s ease-out;
+    box-shadow: 0 0 10px rgba(112, 193, 179, 0.5);
+}
+
+.performance-desc {
+    font-size: 14px;
+    color: #b8e6e0;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Feedback Grid */
+.feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.feedback-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(112, 193, 179, 0.3);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.feedback-card.strengths {
+    border-left: 4px solid #70c1b3;
+}
+
+.feedback-card.improvements {
+    border-left: 4px solid #f39c12;
+}
+
+.feedback-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(112, 193, 179, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.feedback-icon svg {
+    color: #70c1b3;
+}
+
+.feedback-card h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.feedback-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feedback-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #b8e6e0;
+    line-height: 1.6;
+}
+
+.feedback-bullet {
+    color: #70c1b3;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Detailed Feedback Card */
+.detailed-feedback-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(112, 193, 179, 0.3);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.detailed-feedback-card h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.feedback-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.feedback-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(112, 193, 179, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.feedback-item h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #70c1b3;
+    margin-bottom: 12px;
+}
+
+.feedback-text {
+    font-size: 16px;
+    color: #b8e6e0;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.feedback-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-label {
+    font-size: 14px;
+    color: #b8e6e0;
+    font-weight: 600;
+}
+
+.rating-value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #70c1b3;
+}
+
+/* Recommendations Card */
+.recommendations-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(112, 193, 179, 0.3);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.recommendations-card h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.recommendation-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(112, 193, 179, 0.2);
+    border-radius: 12px;
+    padding: 28px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.recommendation-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.recommendation-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.recommendation-item h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.recommendation-item p {
+    font-size: 15px;
+    color: #b8e6e0;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.recommendation-link {
+    color: #70c1b3;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.recommendation-link:hover {
+    color: #5ab0a2;
+    text-decoration: underline;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: white;
+    border: 2px solid #70c1b3;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #70c1b3;
+    color: #0a2463;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE DESIGN FOR RESULT PAGE ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .result-hero {
+        padding: 40px 0 30px;
+    }
+    
+    .result-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .result-icon svg {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .result-title {
+        font-size: 36px;
+    }
+    
+    .result-subtitle {
+        font-size: 18px;
+    }
+    
+    .result-section {
+        padding: 30px 0;
+    }
+    
+    .score-card {
+        padding: 32px 24px;
+    }
+    
+    .score-circle {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .score-circle svg {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .score-number {
+        font-size: 56px;
+    }
+    
+    .status-badge {
+        padding: 10px 24px;
+        font-size: 16px;
+    }
+    
+    .score-message {
+        font-size: 16px;
+    }
+    
+    .performance-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .performance-card {
+        padding: 24px;
+    }
+    
+    .feedback-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feedback-card {
+        padding: 24px;
+    }
+    
+    .detailed-feedback-card {
+        padding: 28px 20px;
+    }
+    
+    .detailed-feedback-card h3 {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+    
+    .feedback-item {
+        padding: 20px;
+    }
+    
+    .recommendations-card {
+        padding: 28px 20px;
+    }
+    
+    .recommendations-card h3 {
+        font-size: 26px;
+        margin-bottom: 24px;
+    }
+    
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .action-buttons .btn-primary,
+    .action-buttons .btn-secondary,
+    .action-buttons .btn-outline {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .result-hero {
+        padding: 30px 0 20px;
+    }
+    
+    .result-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 16px;
+    }
+    
+    .result-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .result-title {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .result-subtitle {
+        font-size: 16px;
+    }
+    
+    .result-section {
+        padding: 24px 0;
+    }
+    
+    .score-card {
+        padding: 24px 16px;
+    }
+    
+    .score-circle {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 24px;
+    }
+    
+    .score-circle svg {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .score-number {
+        font-size: 48px;
+    }
+    
+    .score-label {
+        font-size: 12px;
+    }
+    
+    .status-badge {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    .score-message {
+        font-size: 15px;
+    }
+    
+    .performance-grid {
+        gap: 16px;
+    }
+    
+    .performance-card {
+        padding: 20px;
+    }
+    
+    .performance-header h3 {
+        font-size: 17px;
+    }
+    
+    .performance-score {
+        font-size: 24px;
+    }
+    
+    .progress-bar {
+        height: 10px;
+    }
+    
+    .performance-desc {
+        font-size: 13px;
+    }
+    
+    .feedback-grid {
+        gap: 16px;
+    }
+    
+    .feedback-card {
+        padding: 20px;
+    }
+    
+    .feedback-icon {
+        width: 52px;
+        height: 52px;
+    }
+    
+    .feedback-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .feedback-card h3 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+    
+    .feedback-list li {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .feedback-bullet {
+        font-size: 16px;
+    }
+    
+    .detailed-feedback-card {
+        padding: 24px 16px;
+    }
+    
+    .detailed-feedback-card h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .feedback-content {
+        gap: 16px;
+    }
+    
+    .feedback-item {
+        padding: 16px;
+    }
+    
+    .feedback-item h4 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    
+    .feedback-text {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .rating-label {
+        font-size: 13px;
+    }
+    
+    .rating-value {
+        font-size: 16px;
+    }
+    
+    .recommendations-card {
+        padding: 24px 16px;
+    }
+    
+    .recommendations-card h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    
+    .recommendations-grid {
+        gap: 16px;
+    }
+    
+    .recommendation-item {
+        padding: 20px;
+    }
+    
+    .recommendation-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+    }
+    
+    .recommendation-item h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .recommendation-item p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .recommendation-link {
+        font-size: 14px;
+    }
+    
+    .action-buttons {
+        gap: 10px;
+        padding: 16px 0;
+    }
+    
+    .action-buttons .btn-primary,
+    .action-buttons .btn-secondary,
+    .action-buttons .btn-outline {
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .result-title {
+        font-size: 24px;
+    }
+    
+    .score-circle {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .score-circle svg {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .score-number {
+        font-size: 40px;
+    }
+    
+    .detailed-feedback-card h3,
+    .recommendations-card h3 {
+        font-size: 20px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .bubbles,
+    .action-buttons {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .score-card,
+    .performance-card,
+    .feedback-card,
+    .detailed-feedback-card,
+    .recommendations-card {
+        background: white;
+        border: 1px solid #ddd;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+    
+    .result-section {
+        page-break-inside: avoid;
+    }
+}
